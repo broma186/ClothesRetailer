@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_retailer">
+    <fragment
+        android:id="@+id/view_pager_fragment"
+        android:name="com.example.clothingretailer.ProductsFragment"
+        tools:layout="@layout/fragment_view_pager">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/wish_list_fragment"
+        android:name="com.example.clothingretailer.WishListFragment"
+        android:label="@string/wish_list_title"
+        tools:layout="@layout/fragment_wish_list">
+        <argument
+            android:name="wishList"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/shopping_cart_fragment"
+        android:name="com.example.clothingretailer.ShoppingCartFragment"
+        android:label="@string/shopping_cart_title"
+        tools:layout="@layout/fragment_shopping_cart">
+        <argument
+            android:name="shoppingCart"
+            app:argType="string" />
+    </fragment>
+</navigation>

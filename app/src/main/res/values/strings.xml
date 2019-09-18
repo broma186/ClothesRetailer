@@ -1,5 +1,8 @@
 <resources>
-    <string name="app_name">ClothingRetailer</string>
+    <string name="app_name">Clothing Retailer</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
+    <string name="products_title">Products</string>
+    <string name="wish_list_title">Wish List</string>
+    <string name="shopping_cart_title">Cart</string>
 </resources>
