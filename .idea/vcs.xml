@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/Kotlin-Guides" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/MeterOr" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/MeterOr/adrcommon" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/MeterOr/coronisutils" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/TicketOr" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/android-kotlin-fundamentals-apps" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/android-sunflower" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/paymypark-android" vcs="Git" />
+  </component>
+</project>
