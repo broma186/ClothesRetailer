@@ -8,13 +8,29 @@
         android:layout_height="match_parent">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/garden_list"
+            android:id="@+id/product_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clipToPadding="false"
             app:spanCount="2"
             app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
             tools:listitem="@layout/list_item_product"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/add_wishlist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="?attr/colorPrimary"
+            android:text="@string/add_to_wishlist"
+            app:backgroundTint="?attr/colorOnPrimary"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/add_cart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="?attr/colorPrimary"
+            android:text="@string/add_to_shopping_cart"
+            app:backgroundTint="?attr/colorOnPrimary"/>
     </FrameLayout>
 
 </layout>
