@@ -5,7 +5,7 @@ import com.example.clothingretailer.ViewModels.ProductListViewModelViewFactory
 import com.example.clothingretailer.data.AppDatabase
 import com.example.clothingretailer.data.ProductRepository
 
-class InjectorUtils {
+object InjectorUtils {
 
     private fun getProductRepository(context: Context): ProductRepository {
         return ProductRepository.getInstance(

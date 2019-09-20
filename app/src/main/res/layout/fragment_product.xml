@@ -18,7 +18,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clipToPadding="false"
-            app:isGone="@{!hasProducts}"
             app:spanCount="2"
             app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
             tools:listitem="@layout/list_item_product"/>
@@ -27,9 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:orientation="vertical"
-            app:isGone="@{hasPlantings}">
-
+            android:orientation="vertical">
             <TextView
                 android:id="@+id/no_products"
                 android:layout_width="wrap_content"

@@ -5,10 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProviders
 import androidx.lifecycle.observe
 import com.example.clothingretailer.ViewModels.ProductListViewModel
-import com.example.clothingretailer.ViewModels.ProductViewModel
 import com.example.clothingretailer.adapters.ProductAdapter
 import com.example.clothingretailer.databinding.FragmentProductBinding
 import com.example.clothingretailer.utilities.InjectorUtils
@@ -18,7 +18,7 @@ class ProductsFragment : Fragment() {
     private lateinit var binding: FragmentProductBinding
 
     private val viewModel: ProductListViewModel by viewModels {
-       // InjectorUtils
+        InjectorUtils.provideProductListViewModelFactory(requireContext())
     }
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,7 +37,6 @@ class ProductsFragment : Fragment() {
            //TODO: Add item to shopping cart
 
         }
-        viewModel = ViewModelProviders.of(this).get(ProductListViewModel::class.java)
         viewModel.productList.observe(viewLifecycleOwner) {result ->
             binding.hasProducts = !result.isNullOrEmpty()
             adapter.submitList(result)

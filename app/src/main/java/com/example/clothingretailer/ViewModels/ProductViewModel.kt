@@ -1,11 +1,10 @@
 package com.example.clothingretailer.ViewModels
 
 import com.example.clothingretailer.data.Product
-import com.example.clothingretailer.data.ProductList
+import com.example.clothingretailer.data.Products
 
-class ProductViewModel(productList : ProductList) {
-
-    val product: Product = productList.products[0]
+class ProductViewModel(products : Products) {
+    private val product = checkNotNull(products.product)
 
     val productId
         get() = product.productId
@@ -15,8 +14,4 @@ class ProductViewModel(productList : ProductList) {
         get() = product.price
     val quantity
         get() = product.quantity
-    val inWishList
-        get() = product.inWishList
-    val inShoppingCart
-        get() = product.inShoppingCart
 }

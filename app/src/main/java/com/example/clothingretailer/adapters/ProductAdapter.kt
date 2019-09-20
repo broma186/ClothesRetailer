@@ -2,7 +2,6 @@ package com.example.clothingretailer.adapters
 
 
 import com.example.clothingretailer.R
-import com.example.clothingretailer.ViewModels.ProductListViewModel
 import com.example.clothingretailer.databinding.ListItemProductBinding
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -11,9 +10,9 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.clothingretailer.ViewModels.ProductViewModel
-import com.example.clothingretailer.data.ProductList
+import com.example.clothingretailer.data.Products
 
-class ProductAdapter : ListAdapter<ProductList, ProductAdapter.ViewHolder>(ProductDiffCallback()) {
+class ProductAdapter : ListAdapter<Products, ProductAdapter.ViewHolder>(ProductDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
@@ -44,7 +43,7 @@ class ProductAdapter : ListAdapter<ProductList, ProductAdapter.ViewHolder>(Produ
         }
 
 
-        fun bind(products: ProductList) {
+        fun bind(products: Products) {
             with(binding) {
                 viewModel = ProductViewModel(products)
                 executePendingBindings()
@@ -52,20 +51,20 @@ class ProductAdapter : ListAdapter<ProductList, ProductAdapter.ViewHolder>(Produ
         }
     }
 
-    private class ProductDiffCallback : DiffUtil.ItemCallback<ProductList>() {
+    private class ProductDiffCallback : DiffUtil.ItemCallback<Products>() {
 
         override fun areItemsTheSame(
-            oldItem: ProductList,
-            newItem: ProductList
+            oldItem: Products,
+            newItem: Products
         ): Boolean {
-            return oldItem.products.get(0).productId == newItem.products.get(0).productId
+            return oldItem.product.productId == newItem.product.productId
         }
 
         override fun areContentsTheSame(
-            oldItem: ProductList,
-            newItem: ProductList
+            oldItem: Products,
+            newItem: Products
         ): Boolean {
-            return oldItem.products.get(0).name == newItem.products.get(0).name
+            return oldItem.product.name == newItem.product.name
         }
     }
 }

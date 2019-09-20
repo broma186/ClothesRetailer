@@ -2,9 +2,8 @@ package com.example.clothingretailer.data
 
 import androidx.room.Embedded
 
-data class ProductList (
+data class Products (
 
     @Embedded
-    val products: List<Product> = emptyList()
-
+    val product: Product
 )
