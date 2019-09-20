@@ -9,13 +9,13 @@ import androidx.room.Query
 @Dao
 interface ProductDao {
 
-    @Query("SELECT * FROM products")
+    @Query("SELECT * FROM product")
     fun getProducts(): LiveData<List<Product>>
 
-    @Query("SELECT EXISTS(SELECT 1 FROM products WHERE product_id = :plantId LIMIT 1)")
+    @Query("SELECT EXISTS(SELECT 1 FROM product WHERE product_id = :plantId LIMIT 1)")
     fun InWishList(plantId: String): LiveData<Boolean>
 
-    @Query("SELECT EXISTS(SELECT 1 FROM products WHERE product_id = :plantId LIMIT 1)")
+    @Query("SELECT EXISTS(SELECT 1 FROM product WHERE product_id = :plantId LIMIT 1)")
     fun InShoppingCart(plantId: String): LiveData<Boolean>
 
     @Insert

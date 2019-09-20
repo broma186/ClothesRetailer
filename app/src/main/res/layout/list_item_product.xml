@@ -7,7 +7,9 @@
             type="android.view.View.OnClickListener"/>
         <variable
             name="viewModel"
-            type="com.example.clothingretailer.ViewModels.ProductListViewModel"/>
+            type="com.example.clothingretailer.ViewModels.ProductViewModel"/>
+
+        <variable name="item" type="com.example.clothingretailer.data.Product" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

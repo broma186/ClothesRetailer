@@ -21,4 +21,15 @@ class ProductRepository private constructor(
     fun InShoppingCart(productId: String) =
         productDao.InShoppingCart(productId)
 
+    companion object {
+
+        // For Singleton instantiation
+        @Volatile private var instance: ProductRepository? = null
+
+        fun getInstance(gardenPlantingDao: ProductDao) =
+            instance ?: synchronized(this) {
+                instance ?: ProductRepository(gardenPlantingDao).also { instance = it }
+            }
+    }
+
 }

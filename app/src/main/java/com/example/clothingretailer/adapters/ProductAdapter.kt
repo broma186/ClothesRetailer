@@ -3,18 +3,17 @@ package com.example.clothingretailer.adapters
 
 import com.example.clothingretailer.R
 import com.example.clothingretailer.ViewModels.ProductListViewModel
-import com.example.clothingretailer.data.Product
 import com.example.clothingretailer.databinding.ListItemProductBinding
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.clothingretailer.ViewModels.ProductViewModel
+import com.example.clothingretailer.data.ProductList
 
-class ProductAdapter : ListAdapter<ProductListViewModel, ProductAdapter.ViewHolder>(ProductDiffCallback()) {
+class ProductAdapter : ListAdapter<ProductList, ProductAdapter.ViewHolder>(ProductDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
@@ -45,28 +44,28 @@ class ProductAdapter : ListAdapter<ProductListViewModel, ProductAdapter.ViewHold
         }
 
 
-        fun bind(products: List<Product>) {
+        fun bind(products: ProductList) {
             with(binding) {
-                viewModel = ProductListViewModel(products)
+                viewModel = ProductViewModel(products)
                 executePendingBindings()
             }
         }
     }
 
-    private class ProductDiffCallback : DiffUtil.ItemCallback<ProductListViewModel>() {
+    private class ProductDiffCallback : DiffUtil.ItemCallback<ProductList>() {
 
         override fun areItemsTheSame(
-            oldItem: ProductListViewModel,
-            newItem: ProductListViewModel
+            oldItem: ProductList,
+            newItem: ProductList
         ): Boolean {
-            return oldItem.productId == newItem.productId
+            return oldItem.products.get(0).productId == newItem.products.get(0).productId
         }
 
         override fun areContentsTheSame(
-            oldItem: ProductListViewModel,
-            newItem: ProductListViewModel
+            oldItem: ProductList,
+            newItem: ProductList
         ): Boolean {
-            return oldItem.name == newItem.name
+            return oldItem.products.get(0).name == newItem.products.get(0).name
         }
     }
 }

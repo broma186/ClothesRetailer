@@ -3,7 +3,7 @@ package com.example.clothingretailer.data
 import androidx.room.*
 import java.util.*
 
-@Entity(tableName = "products",
+@Entity(tableName = "product",
         indices = [androidx.room.Index("product_id")]
 )
 
