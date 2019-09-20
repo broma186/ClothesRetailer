@@ -1,6 +1,5 @@
-package com.example.clothingretailer.ViewModels
+package com.example.clothingretailer.viewmodels
 
-import com.example.clothingretailer.data.Product
 import com.example.clothingretailer.data.Products
 
 class ProductViewModel(products : Products) {

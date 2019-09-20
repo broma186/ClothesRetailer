@@ -7,7 +7,7 @@
             type="android.view.View.OnClickListener"/>
         <variable
             name="viewModel"
-            type="com.example.clothingretailer.ViewModels.ProductViewModel"/>
+            type="com.example.clothingretailer.viewmodels.ProductViewModel"/>
 
         <variable name="item" type="com.example.clothingretailer.data.Product" />
     </data>

@@ -9,7 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.clothingretailer.ViewModels.ProductViewModel
+import com.example.clothingretailer.viewmodels.ProductViewModel
 import com.example.clothingretailer.data.Products
 
 class ProductAdapter : ListAdapter<Products, ProductAdapter.ViewHolder>(ProductDiffCallback()) {

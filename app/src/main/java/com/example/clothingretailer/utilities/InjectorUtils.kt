@@ -1,7 +1,7 @@
 package com.example.clothingretailer.utilities
 
 import android.content.Context
-import com.example.clothingretailer.ViewModels.ProductListViewModelViewFactory
+import com.example.clothingretailer.viewmodels.ProductListViewModelViewFactory
 import com.example.clothingretailer.data.AppDatabase
 import com.example.clothingretailer.data.ProductRepository
 
