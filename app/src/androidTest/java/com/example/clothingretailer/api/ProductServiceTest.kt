@@ -23,13 +23,17 @@ class ProductServiceTest {
                 try {
                     if (response.isSuccessful) {
                         Log.d(TAG, "Success!!!")
+                        assertTrue(response.isSuccessful)
                     } else {
                         Log.d(TAG, "Error: ${response.code()}")
+                        fail()
                     }
                 } catch (e: HttpException) {
                     Log.d(TAG, "\"Exception ${e.message}\"")
+                    fail()
                 } catch (e: Throwable) {
                     Log.d(TAG, "Ooops: Something else went wrong")
+                    fail()
                 }
             }
         }

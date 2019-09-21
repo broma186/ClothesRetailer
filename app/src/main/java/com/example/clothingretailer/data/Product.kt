@@ -14,8 +14,8 @@ data class Product(
     @PrimaryKey @ColumnInfo(name = "product_id") val productId: Int,
     @ColumnInfo(name = "name") val name: String,
     @ColumnInfo(name = "category") val category: String,
-    @ColumnInfo(name = "price") val price: Int,
-    @ColumnInfo(name = "old_price") val oldPrice: Int,
+    @ColumnInfo(name = "price") val price: Float?,
+    @ColumnInfo(name = "old_price") val oldPrice: Float?,
     @ColumnInfo(name = "stock") val stock: Int,
     @ColumnInfo(name = "in_wish_list") val inWishList: Int?,
     @ColumnInfo(name = "in_shopping_cart") val inShoppingCart: Int?

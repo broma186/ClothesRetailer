@@ -8,9 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.observe
 import com.example.clothingretailer.adapters.ShoppingCartAdapter
-import com.example.clothingretailer.adapters.WishListAdapter
 import com.example.clothingretailer.databinding.FragmentShoppingCartBinding
-import com.example.clothingretailer.databinding.FragmentWishListBinding
 import com.example.clothingretailer.utilities.InjectorUtils
 import com.example.clothingretailer.viewmodels.ProductListViewModel
 
