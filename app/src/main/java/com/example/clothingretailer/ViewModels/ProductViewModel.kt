@@ -12,5 +12,5 @@ class ProductViewModel(products : Products) {
     val price
         get() = product.price
     val quantity
-        get() = product.quantity
+        get() = product.stock
 }

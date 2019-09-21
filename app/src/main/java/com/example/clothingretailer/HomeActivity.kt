@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil.setContentView
 import com.example.clothingretailer.databinding.ActivityMainBinding
+import org.jetbrains.anko.toast
 
 class HomeActivity : AppCompatActivity() {
 
