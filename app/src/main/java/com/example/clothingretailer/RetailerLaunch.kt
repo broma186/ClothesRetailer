@@ -14,6 +14,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import retrofit2.HttpException
 import com.example.clothingretailer.data.Product
+import org.jetbrains.anko.toast
 import retrofit2.Response
 
 class RetailerLaunch : AppCompatActivity() {
@@ -50,19 +51,16 @@ class RetailerLaunch : AppCompatActivity() {
             withContext(Dispatchers.Main) {
                 try {
                     if (response.isSuccessful) {
-                        Log.d(com.example.clothingretailer.utilities.TAG, "Success!!!")
                         val products : List<Product>? = response.body()
                         val database = AppDatabase.getInstance(applicationContext)
-                        database.plantDao().insertAll(plantList)
+                        database.productDao().insertAll(products)
                     } else {
-                        Log.d(com.example.clothingretailer.utilities.TAG, "Error: ${response.code()}"
-                        )
+                        toast("Error: ${response.code()}")
                     }
                 } catch (e: HttpException) {
-                    Log.d(com.example.clothingretailer.utilities.TAG, "\"Exception ${e.message}\"")
+                    toast("\"Exception ${e.message}\"")
                 } catch (e: Throwable) {
-                    Log.d(com.example.clothingretailer.utilities.TAG, "Ooops: Something else went wrong"
-                    )
+                    toast("Ooops: Something else went wrong")
                 }
             }
         }
