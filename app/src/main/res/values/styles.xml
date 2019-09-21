@@ -1,20 +1,26 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+    <style name="Base.Theme.ClothingRetailer" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/clothing_retailer_green_500</item>
+        <item name="colorOnPrimary">@color/clothing_retailer_yellow_500</item>
+        <item name="colorPrimaryDark">@color/clothing_retailer_green_700</item>
+        <item name="colorOnSurface">@color/clothing_retailer_black</item>
+        <item name="colorAccent">@color/clothing_retailer_green_700</item>
+        <item name="colorSurface">@color/clothing_retailer_gray_50</item>
+        <item name="colorSecondary">@color/clothing_retailer_yellow_500</item>
+        <item name="android:colorBackground">@color/clothing_retailer_green_500</item>
     </style>
 
-    <style name="AppTheme.NoActionBar">
+    <style name="Theme.ClothingRetailer" parent="Base.Theme.ClothingRetailer"/>
+
+    <style name="Theme.ClothingRetailer.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+    <style name="Theme.ClothingRetailer.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar"/>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="TextAppearance.ClothingRetailer.Toolbar.Text" parent="TextAppearance.MaterialComponents.Headline5" >
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
 
 </resources>

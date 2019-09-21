@@ -11,7 +11,7 @@ import java.util.*
 )
 
 data class Product(
-    @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "product_id") val productId: String,
+    @PrimaryKey @ColumnInfo(name = "product_id") val productId: String,
     @ColumnInfo(name = "name") val name: String,
     @ColumnInfo(name = "category") val category: String,
     @ColumnInfo(name = "price") val price: Int,

@@ -9,7 +9,7 @@ object InjectorUtils {
 
     private fun getProductRepository(context: Context): ProductRepository {
         return ProductRepository.getInstance(
-            AppDatabase.AppDatabase.getInstance(context.applicationContext).productDao())
+            AppDatabase.getInstance(context.applicationContext).productDao())
     }
 
     fun provideProductListViewModelFactory(
