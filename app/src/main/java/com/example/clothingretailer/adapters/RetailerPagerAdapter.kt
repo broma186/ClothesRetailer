@@ -13,9 +13,9 @@ const val SHOPPING_CART_INDEX = 2
 class RetailerPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
 
     private val tabFragmentsCreators: Map<Int, () -> Fragment> = mapOf(
-        PRODUCTS_INDEX to { ProductsFragment() }
-        /*WISH_LIST_INDEX to { WishListFragment() },
-        SHOPPING_CART_INDEX to { ShoppingCartFragment() }*/
+        PRODUCTS_INDEX to { ProductsFragment() },
+        WISH_LIST_INDEX to { WishListFragment() },
+        SHOPPING_CART_INDEX to { ShoppingCartFragment() }
     )
 
     override fun getItemCount() = tabFragmentsCreators.size

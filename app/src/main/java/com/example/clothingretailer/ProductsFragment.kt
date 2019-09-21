@@ -28,14 +28,6 @@ class ProductsFragment : Fragment() {
         val adapter = ProductAdapter()
         binding.productList.adapter = adapter
 
-        binding.addWishlist.setOnClickListener {
-            //TODO: Add item to wish list
-
-        }
-        binding.addCart.setOnClickListener {
-           //TODO: Add item to shopping cart
-
-        }
         viewModel.productList.observe(viewLifecycleOwner) {result ->
             binding.hasProducts = !result.isNullOrEmpty()
             adapter.submitList(result)
