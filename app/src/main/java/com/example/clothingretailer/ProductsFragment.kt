@@ -28,7 +28,9 @@ class ProductsFragment : Fragment() {
         val adapter = ProductAdapter()
         binding.productList.adapter = adapter
 
+
         viewModel.productList.observe(viewLifecycleOwner) {result ->
+
             binding.hasProducts = !result.isNullOrEmpty()
             adapter.submitList(result)
         }

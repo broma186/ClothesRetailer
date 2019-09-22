@@ -35,6 +35,9 @@ class ProductAdapter : ListAdapter<Products, ProductAdapter.ViewHolder>(ProductD
         private val binding: ListItemProductBinding
     ) : RecyclerView.ViewHolder(binding.root) {
         init {
+            if (binding.productOldPrice.text.equals("0.0")) {
+                binding.showOldPrice = false
+            }
             binding.setClickListener { view ->
                 binding.viewModel?.productId?.let { productId ->
                     //TODO User presses the item, either add to wish list or shopping cart (KAPOOW!!)
@@ -50,6 +53,8 @@ class ProductAdapter : ListAdapter<Products, ProductAdapter.ViewHolder>(ProductD
             }
         }
     }
+
+
 
     private class ProductDiffCallback : DiffUtil.ItemCallback<Products>() {
 

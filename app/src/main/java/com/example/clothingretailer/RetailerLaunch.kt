@@ -19,28 +19,12 @@ import retrofit2.Response
 
 class RetailerLaunch : AppCompatActivity() {
 
-    private var mDelayHandler: Handler? = null
-
-    internal val mRunnable: Runnable = Runnable {
-        if (!isFinishing) {
-            val intent = Intent(applicationContext, HomeActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.retailer_launch)
 
-        //Initialize the Handler
-        mDelayHandler = Handler()
-
-        //Navigate with delay
-       // mDelayHandler!!.postDelayed(mRunnable, SPLASH_DELAY)
-
         getProducts()
-
     }
 
 
@@ -54,6 +38,10 @@ class RetailerLaunch : AppCompatActivity() {
                         val products : List<Product>? = response.body()
                         val database = AppDatabase.getInstance(applicationContext)
                         database.productDao().insertAll(products)
+
+                        val intent = Intent(applicationContext, HomeActivity::class.java)
+                        startActivity(intent)
+                        finish()
                     } else {
                         toast("Error: ${response.code()}")
                     }
@@ -65,14 +53,5 @@ class RetailerLaunch : AppCompatActivity() {
             }
         }
 
-    }
-
-    public override fun onDestroy() {
-
-        if (mDelayHandler != null) {
-            mDelayHandler!!.removeCallbacks(mRunnable)
-        }
-
-        super.onDestroy()
     }
 }
