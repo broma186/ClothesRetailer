@@ -1,5 +1,6 @@
 package com.example.clothingretailer.data
 
+import android.content.Context
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -19,4 +20,9 @@ data class Product(
     @ColumnInfo(name = "stock") val stock: Int,
     @ColumnInfo(name = "in_wish_list") val inWishList: Int?,
     @ColumnInfo(name = "in_shopping_cart") val inShoppingCart: Int?
+
 )
+
+
+
+
