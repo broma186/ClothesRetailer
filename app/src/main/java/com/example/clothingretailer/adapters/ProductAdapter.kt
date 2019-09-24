@@ -28,9 +28,7 @@ import retrofit2.Response
 
 class ProductAdapter : ListAdapter<Products, ProductAdapter.ViewHolder>(ProductDiffCallback()) {
 
-    var context : Context? = null
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        context = parent.context
         return ViewHolder(
             DataBindingUtil.inflate(
                 LayoutInflater.from(parent.context),

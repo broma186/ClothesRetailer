@@ -6,6 +6,10 @@ class ProductRepository private constructor(
 
     fun getProducts() = productDao.getProducts()
 
+    fun getShoppingList() = productDao.getShoppingCartProducts()
+
+    fun getWishList() = productDao.getWishListProducts()
+
     fun addToShoppingCart(productId: String, cartId: String?) = productDao.addToShoppingCart(productId, cartId)
 
     fun removeFromShoppingCart(productId: String) = productDao.removeFromShoppingCart(productId)

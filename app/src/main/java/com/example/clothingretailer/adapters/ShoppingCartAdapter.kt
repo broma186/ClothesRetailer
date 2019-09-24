@@ -33,14 +33,7 @@ class ShoppingCartAdapter : ListAdapter<Products, ShoppingCartAdapter.ViewHolder
     class ViewHolder(
         private val binding: ListItemShoppingCartBinding
     ) : RecyclerView.ViewHolder(binding.root) {
-        init {
-            binding.setClickListener { view ->
-                binding.viewModel?.productId?.let { productId ->
-                    //TODO User presses the item, either add to wish list or shopping cart (KAPOOW!!)
-                }
-            }
-        }
-
+        init { }
 
         fun bind(products: Products) {
             with(binding) {

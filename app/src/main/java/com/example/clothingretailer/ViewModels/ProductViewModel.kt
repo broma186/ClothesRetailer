@@ -94,5 +94,9 @@ class ProductViewModel(products: Products)
         productRepository.addToShoppingCart(productId, cartId)
     }
 
+    fun removeFromShoppingCart() [
+
+    ]
+
 }
 

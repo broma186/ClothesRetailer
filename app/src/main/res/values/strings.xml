@@ -6,7 +6,9 @@
     <string name="wish_list_title">Wish List</string>
     <string name="shopping_cart_title">Cart</string>
     <string name="add_to_wishlist">Add To WishList</string>
+    <string name="remove_from_wish_list">Remove</string>
     <string name="add_to_shopping_cart">Add To Cart</string>
+    <string name="remove_from_list">Remove</string>
     <string name="no_products">No Products available</string>
 
 </resources>

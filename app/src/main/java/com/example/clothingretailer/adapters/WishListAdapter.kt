@@ -34,13 +34,7 @@ class WishListAdapter : ListAdapter<Products, WishListAdapter.ViewHolder>(WishLi
     class ViewHolder(
         private val binding: ListItemWishListBinding
     ) : RecyclerView.ViewHolder(binding.root) {
-        init {
-            binding.setClickListener { view ->
-                binding.viewModel?.productId?.let { productId ->
-                    //TODO User presses the item, either add to wish list or shopping cart (KAPOOW!!)
-                }
-            }
-        }
+        init { }
 
         fun bind(products: Products) {
             with(binding) {

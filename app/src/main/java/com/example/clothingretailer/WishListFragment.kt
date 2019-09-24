@@ -7,34 +7,44 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.observe
+import androidx.recyclerview.widget.ListAdapter
+import androidx.recyclerview.widget.RecyclerView
 import com.example.clothingretailer.adapters.WishListAdapter
+import com.example.clothingretailer.data.Products
 import com.example.clothingretailer.databinding.FragmentWishListBinding
 import com.example.clothingretailer.utilities.InjectorUtils
 import com.example.clothingretailer.viewmodels.ProductListViewModel
+import com.example.clothingretailer.viewmodels.WishListViewModel
 
-class WishListFragment : Fragment(){
+class WishListFragment : Fragment(), ListObserver{
 
-    private val viewModel: ProductListViewModel by viewModels {
-        InjectorUtils.provideProductListViewModelFactory(requireContext())
+    private lateinit var binding: FragmentWishListBinding
+    private lateinit var adapter: WishListAdapter
+
+    private val viewModel: WishListViewModel by viewModels {
+        InjectorUtils.provideWishListViewModelFactory(requireContext())
     }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding = FragmentWishListBinding.inflate(inflater, container, false)
+        binding = FragmentWishListBinding.inflate(inflater, container, false)
         context ?: return binding.root
 
-        val adapter = WishListAdapter()
+        adapter = WishListAdapter()
         binding.wishList.adapter = adapter
 
-        viewModel.productList.observe(viewLifecycleOwner) {result ->
-            binding.hasProducts = !result.isNullOrEmpty()
-            adapter.submitList(result)
-        }
+        observeList()
 
         setHasOptionsMenu(true)
         return binding.root
     }
 
+    override fun observeList() {
+        viewModel.productList.observe(viewLifecycleOwner) { result ->
+            binding.hasProducts = !result.isNullOrEmpty()
+            adapter.submitList(result)
+        }
+    }
 }

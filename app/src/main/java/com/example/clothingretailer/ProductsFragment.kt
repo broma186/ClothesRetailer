@@ -12,9 +12,10 @@ import com.example.clothingretailer.adapters.ProductAdapter
 import com.example.clothingretailer.databinding.FragmentProductBinding
 import com.example.clothingretailer.utilities.InjectorUtils
 
-class ProductsFragment : Fragment() {
+class ProductsFragment : Fragment(), ListObserver {
 
     private lateinit var binding: FragmentProductBinding
+    private lateinit var adapter: ProductAdapter
 
     private val viewModel: ProductListViewModel by viewModels {
         InjectorUtils.provideProductListViewModelFactory(requireContext())
@@ -25,16 +26,18 @@ class ProductsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentProductBinding.inflate(inflater, container, false)
-        val adapter = ProductAdapter()
+        adapter = ProductAdapter()
         binding.productList.adapter = adapter
 
+        observeList()
 
-        viewModel.productList.observe(viewLifecycleOwner) {result ->
-
-            binding.hasProducts = !result.isNullOrEmpty()
-            adapter.submitList(result)
-        }
         return binding.root
     }
 
+    override fun observeList() {
+        viewModel.productList.observe(viewLifecycleOwner) {result ->
+            binding.hasProducts = !result.isNullOrEmpty()
+            adapter.submitList(result)
+        }
+    }
 }

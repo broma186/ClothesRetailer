@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import com.example.clothingretailer.data.ProductRepository
 import com.example.clothingretailer.data.Products
 
-class ProductListViewModel internal constructor(
+class ShoppingListViewModel internal constructor(
     productRepository: ProductRepository
 ) : ViewModel(), ProductListInterface{
     val productList: LiveData<List<Products>> =
@@ -13,6 +13,6 @@ class ProductListViewModel internal constructor(
 
 
     override fun getProductListForDisplay(productRepository: ProductRepository): LiveData<List<Products>> {
-        return productRepository.getProducts()
+        return productRepository.getShoppingList()
     }
 }

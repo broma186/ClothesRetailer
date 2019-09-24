@@ -11,18 +11,22 @@ import com.example.clothingretailer.adapters.ShoppingCartAdapter
 import com.example.clothingretailer.databinding.FragmentShoppingCartBinding
 import com.example.clothingretailer.utilities.InjectorUtils
 import com.example.clothingretailer.viewmodels.ProductListViewModel
+import com.example.clothingretailer.viewmodels.ShoppingListViewModel
 
-class ShoppingCartFragment : Fragment() {
+class ShoppingCartFragment : Fragment(), ListObserver {
 
-    private val viewModel: ProductListViewModel by viewModels {
-        InjectorUtils.provideProductListViewModelFactory(requireContext())
+    private lateinit var binding: FragmentShoppingCartBinding
+    private lateinit var adapter: ShoppingCartAdapter
+
+    private val viewModel: ShoppingListViewModel by viewModels {
+        InjectorUtils.provideShoppingListViewModelFactory(requireContext())
     }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding = FragmentShoppingCartBinding.inflate(inflater, container, false)
+        binding = FragmentShoppingCartBinding.inflate(inflater, container, false)
         context ?: return binding.root
 
         val adapter = ShoppingCartAdapter()
@@ -35,5 +39,12 @@ class ShoppingCartFragment : Fragment() {
 
         setHasOptionsMenu(true)
         return binding.root
+    }
+
+    override fun observeList() {
+        viewModel.productList.observe(viewLifecycleOwner) { result ->
+            binding.hasProducts = !result.isNullOrEmpty()
+            adapter.submitList(result)
+        }
     }
 }
