@@ -75,7 +75,7 @@
             android:layout_height="wrap_content"
             android:textColor="?attr/colorPrimary"
             android:text="@string/remove_from_list"
-            android:onClick="@{viewModel.removeFromShoppingCart(context)}"
+            android:onClick="@{viewModel.removeProductFromShoppingCart()}"
             app:backgroundTint="?attr/colorOnPrimary"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"

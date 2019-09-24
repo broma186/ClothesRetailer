@@ -7,4 +7,6 @@ const val TAG : String = "TEST"
 const val SUCCESS : Int = 1
 const val FAIL : Int = 0
 const val ZERO_OLD_PRICE = "0.0"
+const val NO_STOCK : Int = 0
+
 

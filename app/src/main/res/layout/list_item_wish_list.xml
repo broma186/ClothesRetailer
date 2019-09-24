@@ -79,7 +79,19 @@
             android:layout_height="wrap_content"
             android:textColor="?attr/colorPrimary"
             android:text="@string/remove_from_list"
-            android:onClick="@{viewModel.removeFromShoppingCart(context)}"
+            android:onClick="@{viewModel.removeProductFromWishList(context)}"
+            app:backgroundTint="?attr/colorOnPrimary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:shapeAppearance="@style/ShapeAppearance.ClothesRetailer.Button.Add"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/wish_list_add_to_cart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="?attr/colorPrimary"
+            android:text="@string/add_to_shopping_cart"
+            android:onClick="@{viewModel.addProductToShoppingCart(context)}"
             app:backgroundTint="?attr/colorOnPrimary"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"

@@ -24,4 +24,7 @@ object ProductApiHelper {
 
     suspend fun addProductToCart(productId : Int) : Response<ShoppingCartResponse> = ProductServiceFactory.
         createProductService().addToCart(productId)
+
+    suspend fun removeProductFromCart(productId : Int) : ResponseBody = ProductServiceFactory.
+        createProductService().deleteFromCart(productId)
 }
