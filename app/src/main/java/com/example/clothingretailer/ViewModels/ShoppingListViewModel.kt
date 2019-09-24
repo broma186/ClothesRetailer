@@ -11,7 +11,6 @@ class ShoppingListViewModel internal constructor(
     val productList: LiveData<List<Products>> =
         getProductListForDisplay(productRepository)
 
-
     override fun getProductListForDisplay(productRepository: ProductRepository): LiveData<List<Products>> {
         return productRepository.getShoppingList()
     }

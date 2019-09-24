@@ -6,9 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.observe
 import com.example.clothingretailer.adapters.ShoppingCartAdapter
+import com.example.clothingretailer.data.Product
+import com.example.clothingretailer.data.Products
 import com.example.clothingretailer.databinding.FragmentShoppingCartBinding
+import com.example.clothingretailer.utilities.FragmentHelper
 import com.example.clothingretailer.utilities.InjectorUtils
 import com.example.clothingretailer.viewmodels.ProductListViewModel
 import com.example.clothingretailer.viewmodels.ShoppingListViewModel
@@ -29,13 +33,9 @@ class ShoppingCartFragment : Fragment(), ListObserver {
         binding = FragmentShoppingCartBinding.inflate(inflater, container, false)
         context ?: return binding.root
 
-        val adapter = ShoppingCartAdapter()
+        adapter = ShoppingCartAdapter()
         binding.shoppingCart.adapter = adapter
-
-        viewModel.productList.observe(viewLifecycleOwner) {result ->
-            binding.hasProducts = !result.isNullOrEmpty()
-            adapter.submitList(result)
-        }
+        observeList()
 
         setHasOptionsMenu(true)
         return binding.root
@@ -43,6 +43,7 @@ class ShoppingCartFragment : Fragment(), ListObserver {
 
     override fun observeList() {
         viewModel.productList.observe(viewLifecycleOwner) { result ->
+            binding.totalPrice.text = FragmentHelper.getTotalPrice(result)
             binding.hasProducts = !result.isNullOrEmpty()
             adapter.submitList(result)
         }

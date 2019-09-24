@@ -54,7 +54,6 @@ class ProductAdapter : ListAdapter<Products, ProductAdapter.ViewHolder>(ProductD
             }
         }
 
-
         fun bind(products: Products) {
             with(binding) {
                 viewModel = ProductViewModel(products)
@@ -62,10 +61,6 @@ class ProductAdapter : ListAdapter<Products, ProductAdapter.ViewHolder>(ProductD
             }
         }
     }
-
-
-
-
 
     private class ProductDiffCallback : DiffUtil.ItemCallback<Products>() {
 
