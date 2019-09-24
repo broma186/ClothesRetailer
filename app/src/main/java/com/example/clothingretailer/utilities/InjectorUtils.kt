@@ -7,7 +7,7 @@ import com.example.clothingretailer.data.ProductRepository
 
 object InjectorUtils {
 
-    private fun getProductRepository(context: Context): ProductRepository {
+    fun getProductRepository(context: Context): ProductRepository {
         return ProductRepository.getInstance(
             AppDatabase.getInstance(context.applicationContext).productDao())
     }

@@ -19,8 +19,8 @@ data class Product(
     @ColumnInfo(name = "old_price") val oldPrice: Float?,
     @ColumnInfo(name = "stock") val stock: Int,
     @ColumnInfo(name = "in_wish_list") val inWishList: Int?,
-    @ColumnInfo(name = "in_shopping_cart") val inShoppingCart: Int?
-
+    @ColumnInfo(name = "in_shopping_cart") val inShoppingCart: Int?,
+    @ColumnInfo(name = "cart_id") val cartId: Int?
 )
 
 

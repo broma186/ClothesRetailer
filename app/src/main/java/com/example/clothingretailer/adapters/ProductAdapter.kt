@@ -1,6 +1,7 @@
 package com.example.clothingretailer.adapters
 
 
+import android.content.Context
 import android.util.Log
 import com.example.clothingretailer.R
 import com.example.clothingretailer.databinding.ListItemProductBinding
@@ -27,7 +28,9 @@ import retrofit2.Response
 
 class ProductAdapter : ListAdapter<Products, ProductAdapter.ViewHolder>(ProductDiffCallback()) {
 
+    var context : Context? = null
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        context = parent.context
         return ViewHolder(
             DataBindingUtil.inflate(
                 LayoutInflater.from(parent.context),
@@ -51,12 +54,6 @@ class ProductAdapter : ListAdapter<Products, ProductAdapter.ViewHolder>(ProductD
             if (binding.productOldPrice.text.equals(ZERO_OLD_PRICE)) {
                 binding.showOldPrice = false
             }
-            binding.addToWishList.setOnClickListener {
-
-            }
-            binding.addToShoppingCart.setOnClickListener {
-                addProductToCart()
-            }
         }
 
 
@@ -66,27 +63,6 @@ class ProductAdapter : ListAdapter<Products, ProductAdapter.ViewHolder>(ProductD
                 executePendingBindings()
             }
         }
-
-        private fun addProductToCart() {
-            CoroutineScope(Dispatchers.IO).launch {
-                val response: Response<ShoppingCartResponse> = ProductApiHelper.addProductToCart(binding.viewModel.productId)
-                withContext(Dispatchers.Main) {
-                    try {
-                        if (response.isSuccessful) {
-                            
-                        } else {
-                            Log.d(TAG, "Failed to add product to cart: ${response.code()}")
-                        }
-                    } catch (e: HttpException) {
-                        Log.d(TAG, "\"Failed to add product to cart: ${e.message}\"")
-                    } catch (e: Throwable) {
-                        Log.d(TAG, "Failed to add product to cart")
-                    }
-                }
-
-            }
-        }
-
     }
 
 

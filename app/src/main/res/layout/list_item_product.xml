@@ -3,9 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable
-            name="clickListener"
-            type="android.view.View.OnClickListener"/>
-        <variable
             name="viewModel"
             type="com.example.clothingretailer.viewmodels.ProductViewModel"/>
 
@@ -82,7 +79,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="?attr/colorPrimary"
-            android:text="@string/add_to_shopping_cart"
+            android:text="@string/add_to_wishlist"
+            android:onClick="@{viewModel.addProductToWishList(context)}"
             app:backgroundTint="?attr/colorOnPrimary"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -94,6 +92,7 @@
             android:layout_height="wrap_content"
             android:textColor="?attr/colorPrimary"
             android:text="@string/add_to_shopping_cart"
+            android:onClick="@{viewModel.addProductToShoppingCart(context)}"
             app:backgroundTint="?attr/colorOnPrimary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"

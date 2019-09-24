@@ -6,11 +6,13 @@ class ProductRepository private constructor(
 
     fun getProducts() = productDao.getProducts()
 
-    fun InWishList(productId: String) =
-        productDao.InWishList(productId)
+    fun addToShoppingCart(productId: String, cartId: String?) = productDao.addToShoppingCart(productId, cartId)
 
-    fun InShoppingCart(productId: String) =
-        productDao.InShoppingCart(productId)
+    fun removeFromShoppingCart(productId: String) = productDao.removeFromShoppingCart(productId)
+
+    fun addToWishList(productId: String) = productDao.addToWishList(productId)
+
+    fun removeFromWishList(productId: String) = productDao.removeFromWishList(productId)
 
     companion object {
 
