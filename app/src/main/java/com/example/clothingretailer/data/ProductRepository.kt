@@ -10,7 +10,11 @@ class ProductRepository private constructor(
 
     fun getWishList() = productDao.getWishListProducts()
 
-    fun addToShoppingCart(productId: String, cartId: String?) = productDao.addToShoppingCart(productId, cartId)
+    fun inWishList(productId: String) : Boolean = productDao.inWishList(productId)
+
+    fun inShoppingCart(productId: String) = productDao.inShoppingCart(productId)
+
+    fun addToShoppingCart(productId: String, cartId : String) = productDao.addToShoppingCart(productId, cartId)
 
     fun removeFromShoppingCart(productId: String) = productDao.removeFromShoppingCart(productId)
 

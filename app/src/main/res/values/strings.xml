@@ -11,9 +11,13 @@
     <string name="remove_from_list">Remove</string>
     <string name="no_products">No Products available</string>
     <string name="out_of_stock">This product is out of stock</string>
+    <string name="add_cart_success">Added to cart</string>
     <string name="add_cart_failure">Failed to add product to cart: </string>
     <string name="remove_cart_failure">Failed to remove product from cart: </string>
     <string name="add_wish_list_failure">Failed to add product to wish list: </string>
+    <string name="remove_wish_list_success">Added to wish list</string>
     <string name="remove_wish_list_failure">Failed to remove product from wish list: </string>
     <string name="total_price_title">Total Price: </string>
+    <string name="product_in_wish_list">Product is already in wish list</string>
+    <string name="product_in_shopping_cart">Product is already in shopping cart</string>
 </resources>

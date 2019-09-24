@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <data>
         <variable
-            name="clickListener"
-            type="android.view.View.OnClickListener"/>
-        <variable
             name="viewModel"
-            type="com.example.clothingretailer.viewmodels.ProductViewModel"/>
-
-        <variable name="item" type="com.example.clothingretailer.data.Product" />
+            type="com.example.clothingretailer.viewmodels.ProductViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -21,81 +17,78 @@
             android:id="@+id/product_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@{viewModel.name}"
             android:gravity="center_horizontal"
+            android:text="@{viewModel.name}"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/product_category"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@{viewModel.category}"
             android:gravity="center_horizontal"
+            android:text="@{viewModel.category}"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/product_name"/>
+            app:layout_constraintTop_toBottomOf="@+id/product_name" />
 
         <TextView
             android:id="@+id/product_price"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@{String.valueOf(viewModel.price)}"
             android:gravity="center_horizontal"
+            android:text="@{String.valueOf(viewModel.price)}"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/product_category"/>
+            app:layout_constraintTop_toBottomOf="@+id/product_category" />
 
         <TextView
             android:id="@+id/product_stock"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@{String.valueOf(viewModel.stock)}"
             android:gravity="center_horizontal"
+            android:text="@{String.valueOf(viewModel.stock)}"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/product_price"/>
+            app:layout_constraintTop_toBottomOf="@+id/product_price" />
 
         <TextView
             android:id="@+id/product_old_price"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@{String.valueOf(viewModel.oldPrice)}"
             android:gravity="center_horizontal"
-            app:isGone="@{showOldPrice}"
+            android:text="@{String.valueOf(viewModel.oldPrice)}"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/product_stock"/>
+            app:layout_constraintTop_toBottomOf="@+id/product_stock" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/remove_from_wish_list"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="?attr/colorPrimary"
             android:text="@string/remove_from_list"
-            android:onClick="@{viewModel.removeProductFromWishList(context)}"
+            android:textColor="?attr/colorPrimary"
             app:backgroundTint="?attr/colorOnPrimary"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:shapeAppearance="@style/ShapeAppearance.ClothesRetailer.Button.Add"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:shapeAppearance="@style/ShapeAppearance.ClothesRetailer.Button.Add" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/wish_list_add_to_cart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="?attr/colorPrimary"
             android:text="@string/add_to_shopping_cart"
-            android:onClick="@{viewModel.addProductToShoppingCart(context)}"
+            android:textColor="?attr/colorPrimary"
             app:backgroundTint="?attr/colorOnPrimary"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:shapeAppearance="@style/ShapeAppearance.ClothesRetailer.Button.Add"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:shapeAppearance="@style/ShapeAppearance.ClothesRetailer.Button.Add" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

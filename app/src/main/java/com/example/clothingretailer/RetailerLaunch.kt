@@ -40,8 +40,10 @@ class RetailerLaunch : AppCompatActivity() {
                     }
                 } catch (e: HttpException) {
                     toast("\"Exception ${e.message}\"")
+                    finish()
                 } catch (e: Throwable) {
                     toast("Ooops: Something else went wrong")
+                    finish()
                 }
             }
 

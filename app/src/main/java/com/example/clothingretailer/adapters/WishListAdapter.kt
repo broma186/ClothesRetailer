@@ -1,6 +1,7 @@
 package com.example.clothingretailer.adapters
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DiffUtil
@@ -10,6 +11,7 @@ import com.example.clothingretailer.R
 import com.example.clothingretailer.data.Products
 import com.example.clothingretailer.databinding.ListItemProductBinding
 import com.example.clothingretailer.databinding.ListItemWishListBinding
+import com.example.clothingretailer.utilities.ZERO_OLD_PRICE
 import com.example.clothingretailer.viewmodels.ProductViewModel
 
 class WishListAdapter : ListAdapter<Products, WishListAdapter.ViewHolder>(WishListAdapter.WishListDiffCallback()) {
@@ -34,7 +36,17 @@ class WishListAdapter : ListAdapter<Products, WishListAdapter.ViewHolder>(WishLi
     class ViewHolder(
         private val binding: ListItemWishListBinding
     ) : RecyclerView.ViewHolder(binding.root) {
-        init { }
+        init {
+            if (binding.productOldPrice.text.equals(ZERO_OLD_PRICE)) {
+                binding.productOldPrice.visibility = View.GONE
+            }
+            binding.removeFromWishList.setOnClickListener {
+                binding.viewModel?.removeProductFromWishList(binding.root.context)
+            }
+            binding.wishListAddToCart.setOnClickListener {
+                binding.viewModel?.addProductToShoppingCart(binding.root.context)
+            }
+        }
 
         fun bind(products: Products) {
             with(binding) {

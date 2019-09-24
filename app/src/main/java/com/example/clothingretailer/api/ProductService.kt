@@ -20,6 +20,6 @@ interface ProductService {
     suspend fun addToCart(@Body productId : Int) : Response<ShoppingCartResponse>
 
     @DELETE("cart/{cartId}")
-    suspend fun deleteFromCart(@Path("cartId") cartId: Int) : ResponseBody
+    suspend fun deleteFromCart(@Path("cartId") cartId: Int) : Response<ShoppingCartResponse>
 }
 

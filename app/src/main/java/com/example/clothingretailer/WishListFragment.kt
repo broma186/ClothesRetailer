@@ -37,13 +37,14 @@ class WishListFragment : Fragment(), ListObserver{
 
         observeList()
 
-        setHasOptionsMenu(true)
         return binding.root
     }
 
     override fun observeList() {
         viewModel.productList.observe(viewLifecycleOwner) { result ->
-            binding.hasProducts = !result.isNullOrEmpty()
+            if (!result.isNullOrEmpty()) {
+                binding.noProducts.visibility = View.GONE
+            }
             adapter.submitList(result)
         }
     }

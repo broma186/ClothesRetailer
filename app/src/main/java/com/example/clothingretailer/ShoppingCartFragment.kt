@@ -35,16 +35,18 @@ class ShoppingCartFragment : Fragment(), ListObserver {
 
         adapter = ShoppingCartAdapter()
         binding.shoppingCart.adapter = adapter
+
         observeList()
 
-        setHasOptionsMenu(true)
         return binding.root
     }
 
     override fun observeList() {
         viewModel.productList.observe(viewLifecycleOwner) { result ->
             binding.totalPrice.text = FragmentHelper.getTotalPrice(result)
-            binding.hasProducts = !result.isNullOrEmpty()
+            if (!result.isNullOrEmpty()) {
+                binding.noProducts.visibility = View.GONE
+            }
             adapter.submitList(result)
         }
     }

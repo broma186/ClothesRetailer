@@ -36,7 +36,9 @@ class ProductsFragment : Fragment(), ListObserver {
 
     override fun observeList() {
         viewModel.productList.observe(viewLifecycleOwner) {result ->
-            binding.hasProducts = !result.isNullOrEmpty()
+            if (!result.isNullOrEmpty()) {
+                binding.noProducts.visibility = View.GONE
+            }
             adapter.submitList(result)
         }
     }

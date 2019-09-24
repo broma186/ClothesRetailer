@@ -6,6 +6,7 @@ import android.util.Log
 import com.example.clothingretailer.R
 import com.example.clothingretailer.databinding.ListItemProductBinding
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
@@ -50,7 +51,13 @@ class ProductAdapter : ListAdapter<Products, ProductAdapter.ViewHolder>(ProductD
     ) : RecyclerView.ViewHolder(binding.root) {
         init {
             if (binding.productOldPrice.text.equals(ZERO_OLD_PRICE)) {
-                binding.showOldPrice = false
+                binding.productOldPrice.visibility = View.GONE
+            }
+            binding.addToShoppingCart.setOnClickListener {
+                binding.viewModel?.addProductToShoppingCart(binding.root.context)
+            }
+            binding.addToWishList.setOnClickListener {
+                binding.viewModel?.addProductToWishList(binding.root.context)
             }
         }
 
