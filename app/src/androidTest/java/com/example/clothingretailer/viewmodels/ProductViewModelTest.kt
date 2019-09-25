@@ -54,7 +54,7 @@ class ProductViewModelTest {
     @Test
     fun removeProductFromWishList() {
         CoroutineScope(Dispatchers.IO).launch {
-            val response = ProductApiHelper.removeProductFromCart(productId)
+            val response = ProductApiHelper.removeProductFromCart(productId.toInt())
             if (response.isSuccessful) {
                 removeProductFromShoppingCartDb()
                 assertFalse(isInShoppingCart())

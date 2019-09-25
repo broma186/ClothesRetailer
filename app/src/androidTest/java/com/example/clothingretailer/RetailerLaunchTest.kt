@@ -23,6 +23,7 @@ class RetailerLaunchTest {
 
     @Test
     fun checkIfThereAreProducts() {
+        val context = mock(Context::class.java)
         CoroutineScope(Dispatchers.IO).launch {
             val productRepository: ProductRepository = InjectorUtils.getProductRepository(context)
             val product: Products = productRepository.checkForAProduct()
