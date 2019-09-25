@@ -12,9 +12,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-
-
+        
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/shopping_cart"
             android:layout_width="match_parent"
@@ -23,19 +21,6 @@
             app:spanCount="2"
             app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
             tools:listitem="@layout/list_item_product"/>
-
-        <LinearLayout
-            android:id="@+id/no_products"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/no_products"
-                android:textAppearance="?attr/textAppearanceHeadline5" />
-        </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -54,5 +39,18 @@
                 android:text="0.0"
                 android:textAppearance="?attr/textAppearanceListItem" />
         </LinearLayout>
+        <LinearLayout
+            android:id="@+id/no_products"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no_products"
+                android:textAppearance="?attr/textAppearanceHeadline5" />
+        </LinearLayout>
+
     </FrameLayout>
 </layout>

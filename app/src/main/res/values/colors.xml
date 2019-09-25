@@ -1,17 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
-
-    <color name="clothing_retailer_black">#de000000</color>
-    <color name="clothing_retailer_gray_50">#fafafa</color>
-    <color name="clothing_retailer_gray_50_a600">#99fafafa</color>
-    <color name="clothing_retailer_green_300">#6dc790</color>
-    <color name="clothing_retailer_green_500">#49bb79</color>
-    <color name="clothing_retailer_green_700">#005d2b</color>
-    <color name="clothing_retailer_green_900">#1a231e</color>
-    <color name="clothing_retailer_white">#deffffff</color>
-    <color name="clothing_retailer_yellow_300">#f8f99f</color>
-    <color name="clothing_retailer_yellow_500">#ffff63</color>
+    <color name="colorPrimary">#deffffff</color>
+    <color name="colorPrimaryDark">#de000000</color>
 </resources>

@@ -1,14 +1,8 @@
 <resources>
 
     <style name="Base.Theme.ClothingRetailer" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="colorPrimary">@color/clothing_retailer_green_500</item>
-        <item name="colorOnPrimary">@color/clothing_retailer_yellow_500</item>
-        <item name="colorPrimaryDark">@color/clothing_retailer_green_700</item>
-        <item name="colorOnSurface">@color/clothing_retailer_black</item>
-        <item name="colorAccent">@color/clothing_retailer_green_700</item>
-        <item name="colorSurface">@color/clothing_retailer_gray_50</item>
-        <item name="colorSecondary">@color/clothing_retailer_yellow_500</item>
-        <item name="android:colorBackground">@color/clothing_retailer_green_500</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
     </style>
 
     <style name="Theme.ClothingRetailer" parent="Base.Theme.ClothingRetailer"/>
