@@ -17,29 +17,12 @@
             android:id="@+id/shopping_cart"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="40dp"
             android:clipToPadding="false"
             app:spanCount="2"
             app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
             tools:listitem="@layout/list_item_product"/>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="bottom|start"
-            android:orientation="horizontal">
-            <TextView
-                android:id="@+id/total_price_title"
-                android:layout_width="wrap_content"
-                android:layout_marginRight="20dp"
-                android:layout_height="wrap_content"
-                android:text="@string/total_price_title"/>
-            <TextView
-                android:id="@+id/total_price"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0.0"
-                android:textAppearance="?attr/textAppearanceListItem" />
-        </LinearLayout>
+
         <LinearLayout
             android:id="@+id/no_products"
             android:layout_width="match_parent"
@@ -53,5 +36,26 @@
                 android:textAppearance="?attr/textAppearanceHeadline5" />
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="15dp"
+            android:gravity="start"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/total_price_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/total_price_title"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+            <TextView
+                android:id="@+id/total_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.0"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+        </LinearLayout>
     </FrameLayout>
 </layout>
