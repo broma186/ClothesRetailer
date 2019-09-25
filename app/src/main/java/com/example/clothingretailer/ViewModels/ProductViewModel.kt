@@ -37,22 +37,7 @@ class ProductViewModel(products: Products) : ViewModel() {
         get() = product.oldPrice
     val stock
         get() = product.stock
-    val inWishList
-        get() = product.inWishList
-    val inShoppingCart
-        get() = product.inShoppingCart
-    val cartId
-        get() = product.cartId
-    val showOldPrice = shouldShowOldPrice()
 
-
-    fun shouldShowOldPrice(): Boolean {
-        var shouldShow = false
-        if (oldPrice.toString() > ZERO_OLD_PRICE) {
-            shouldShow = true
-        }
-        return shouldShow
-    }
 
     fun addProductToWishList(context: Context) {
         CoroutineScope(Dispatchers.IO).launch {
