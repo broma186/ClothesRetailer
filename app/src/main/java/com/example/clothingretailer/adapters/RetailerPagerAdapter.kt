@@ -10,6 +10,10 @@ const val PRODUCTS_INDEX = 0
 const val WISH_LIST_INDEX = 1
 const val SHOPPING_CART_INDEX = 2
 
+/*
+    Creates the fragments needed for the view pager on the nav bar. These are the three product, wish list
+    and shopping cart fragments.
+ */
 class RetailerPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
 
     private val tabFragmentsCreators: Map<Int, () -> Fragment> = mapOf(

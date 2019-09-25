@@ -13,6 +13,10 @@ import com.example.clothingretailer.databinding.ListItemShoppingCartBinding
 import com.example.clothingretailer.utilities.ZERO_OLD_PRICE
 import com.example.clothingretailer.viewmodels.ProductViewModel
 
+/*
+Similar to the Product and wish list adapter except that products are displayed with a remove from shopping cart
+icon.
+ */
 class ShoppingCartAdapter : ListAdapter<Products, ShoppingCartAdapter.ViewHolder>(ShoppingCartDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -36,9 +40,10 @@ class ShoppingCartAdapter : ListAdapter<Products, ShoppingCartAdapter.ViewHolder
         private val binding: ListItemShoppingCartBinding
     ) : RecyclerView.ViewHolder(binding.root) {
         init {
-            if (binding.viewModel?.oldPrice == null || binding.viewModel?.oldPrice.toString() == ZERO_OLD_PRICE) {
-                binding.oldPriceLayout.visibility = View.GONE
-            }
+            // Hide the old price text views if there isn't an old price.
+            hideOldPrice()
+
+            // User presses cross/remove icon, removes product from the shopping cart.
             binding.removeFromShoppingCart.setOnClickListener {
                 binding.viewModel?.removeProductFromShoppingCart(binding.root.context)
             }
@@ -50,7 +55,17 @@ class ShoppingCartAdapter : ListAdapter<Products, ShoppingCartAdapter.ViewHolder
                 executePendingBindings()
             }
         }
+
+        // Changes the visibility modifier if the old product price attached to the view model is zero or null.
+        fun hideOldPrice() {
+            if (binding.viewModel?.oldPrice == null || binding.viewModel?.oldPrice.toString() == ZERO_OLD_PRICE) {
+                binding.oldPriceLayout.visibility = View.GONE
+            }
+        }
+
     }
+
+
 
     private class ShoppingCartDiffCallback : DiffUtil.ItemCallback<Products>() {
 

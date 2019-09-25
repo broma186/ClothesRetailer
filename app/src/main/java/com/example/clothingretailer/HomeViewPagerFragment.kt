@@ -13,6 +13,11 @@ import com.example.clothingretailer.adapters.WISH_LIST_INDEX
 import com.example.clothingretailer.databinding.FragmentHomeBinding
 import com.google.android.material.tabs.TabLayoutMediator
 
+/*
+The fragment that displays the nav bar and view pager using data binding. The fragments for the viewpager
+ are initialized inside RetailerPagerAdapter which is the adapter set for the viewpager. The icon/title for
+ each tab is dependant on the fragment index assigned in the RetailerPagerAdapter.
+ */
 class HomeViewPagerFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -20,7 +25,7 @@ class HomeViewPagerFragment : Fragment() {
         val tabLayout = binding.tabs
         val viewPager = binding.viewPager
 
-        viewPager.adapter = RetailerPagerAdapter(this)
+        viewPager.adapter = RetailerPagerAdapter(this) // Set the view pager's adapter.
 
         // Set the icon and text for each tab
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
@@ -33,6 +38,7 @@ class HomeViewPagerFragment : Fragment() {
         return binding.root
     }
 
+    // Set icon for each fragment tab.
     private fun getTabIcon(position: Int): Int {
         return when (position) {
             PRODUCTS_INDEX -> R.drawable.product_tab_selector
@@ -42,6 +48,7 @@ class HomeViewPagerFragment : Fragment() {
         }
     }
 
+    // Set title for each fragment tab.
     private fun getTabTitle(position: Int): String? {
         return when (position) {
             PRODUCTS_INDEX -> getString(R.string.products_title)

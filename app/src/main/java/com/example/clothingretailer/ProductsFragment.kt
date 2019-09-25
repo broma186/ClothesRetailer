@@ -34,6 +34,11 @@ class ProductsFragment : Fragment(), ListObserver {
         return binding.root
     }
 
+    /*
+        Utilizes live data to Observe any changes in the database which then refreshes the list of products
+        that are displayed in the recycler view. Will indicate there are no products with a textview if
+        no products are returned in the result variable.
+     */
     override fun observeList() {
         viewModel.productList.observe(viewLifecycleOwner) {result ->
             if (!result.isNullOrEmpty()) {

@@ -6,6 +6,8 @@ class ProductRepository private constructor(
 
     fun getProducts() = productDao.getProducts()
 
+    fun checkForAProduct() = productDao.checkForAProduct()
+
     fun getShoppingList() = productDao.getShoppingCartProducts()
 
     fun getWishList() = productDao.getWishListProducts()

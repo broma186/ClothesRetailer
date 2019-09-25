@@ -27,8 +27,6 @@ class ShoppingCartFragment : Fragment(), ListObserver {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentShoppingCartBinding.inflate(inflater, container, false)
-        context ?: return binding.root
-
         adapter = ShoppingCartAdapter()
         binding.shoppingCart.adapter = adapter
 

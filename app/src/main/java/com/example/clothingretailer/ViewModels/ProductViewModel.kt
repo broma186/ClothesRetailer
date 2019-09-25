@@ -68,7 +68,9 @@ class ProductViewModel(products: Products) : ViewModel() {
                     }
                 }
             } else { // Product is already in wish list, cannot add again.
-                Toast.makeText(context, context.getString(R.string.product_in_wish_list), Toast.LENGTH_SHORT).show()
+                CoroutineScope(Dispatchers.Main).launch {
+                    Toast.makeText(context, context.getString(R.string.product_in_wish_list), Toast.LENGTH_SHORT).show()
+                }
             }
         }
     }
@@ -113,11 +115,9 @@ class ProductViewModel(products: Products) : ViewModel() {
                         }
                     }
                 } else {
-                    Toast.makeText(
-                        context,
-                        context.getString(R.string.product_in_shopping_cart),
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    CoroutineScope(Dispatchers.Main).launch {
+                        Toast.makeText(context, context.getString(R.string.product_in_shopping_cart), Toast.LENGTH_SHORT).show()
+                    }
                 }
             }
         } else { // The selected product is out of stock. Don't add the product to the cart.
@@ -140,7 +140,7 @@ class ProductViewModel(products: Products) : ViewModel() {
                 try {
                     Toast.makeText(
                         context,
-                        context.getString(R.string.add_cart_success),
+                        context.getString(R.string.remove_cart_success),
                         Toast.LENGTH_SHORT
                     ).show()
                 } catch (e: HttpException) {

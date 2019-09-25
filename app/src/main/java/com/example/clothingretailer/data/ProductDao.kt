@@ -9,6 +9,9 @@ interface ProductDao {
     @Query("SELECT * FROM products")
     fun getProducts(): LiveData<List<Products>>
 
+    @Query("SELECT * FROM products LIMIT 1")
+    fun checkForAProduct(): Products
+
     @Query("SELECT * FROM products where in_wish_list = 1")
     fun getWishListProducts() : LiveData<List<Products>>
 

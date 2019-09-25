@@ -14,6 +14,9 @@ import com.example.clothingretailer.databinding.ListItemWishListBinding
 import com.example.clothingretailer.utilities.ZERO_OLD_PRICE
 import com.example.clothingretailer.viewmodels.ProductViewModel
 
+/*
+The adapter for the wish list. Has a remove button and an add to shopping cart button.
+ */
 class WishListAdapter : ListAdapter<Products, WishListAdapter.ViewHolder>(WishListAdapter.WishListDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WishListAdapter.ViewHolder {
@@ -40,9 +43,11 @@ class WishListAdapter : ListAdapter<Products, WishListAdapter.ViewHolder>(WishLi
             if (binding.viewModel?.oldPrice == null || binding.viewModel?.oldPrice.toString() == ZERO_OLD_PRICE) {
                 binding.oldPriceLayout.visibility = View.GONE
             }
+            // User presses remove icon, takes product from wish list.
             binding.removeFromWishList.setOnClickListener {
                 binding.viewModel?.removeProductFromWishList(binding.root.context)
             }
+            // wish list -> shopping cart
             binding.wishListAddToCart.setOnClickListener {
                 binding.viewModel?.addProductToShoppingCart(binding.root.context)
             }

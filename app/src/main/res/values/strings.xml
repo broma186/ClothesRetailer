@@ -13,6 +13,7 @@
     <string name="out_of_stock">This product is out of stock</string>
     <string name="add_cart_success">Added to cart</string>
     <string name="add_cart_failure">Failed to add product to cart: </string>
+    <string name="remove_cart_success">Removed product from cart: </string>
     <string name="remove_cart_failure">Failed to remove product from cart: </string>
     <string name="add_wish_list_failure">Failed to add product to wish list: </string>
     <string name="remove_wish_list_success">Added to wish list</string>
