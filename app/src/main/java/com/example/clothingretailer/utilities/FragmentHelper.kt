@@ -10,7 +10,6 @@ object FragmentHelper {
         for(p : Products in products) {
             totalPrice += p.product.price
         }
-        Log.d("TEST", "Value of total price is : " + totalPrice)
-        return totalPrice.toString()
+        return "$" + totalPrice.toString()
     }
 }

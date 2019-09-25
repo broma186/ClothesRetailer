@@ -50,8 +50,8 @@ class ProductAdapter : ListAdapter<Products, ProductAdapter.ViewHolder>(ProductD
         private val binding: ListItemProductBinding
     ) : RecyclerView.ViewHolder(binding.root) {
         init {
-            if (binding.productOldPrice.text.equals(ZERO_OLD_PRICE)) {
-                binding.productOldPrice.visibility = View.GONE
+            if (binding.viewModel?.oldPrice == null || binding.viewModel?.oldPrice.toString() == ZERO_OLD_PRICE) {
+                binding.oldPriceLayout.visibility = View.GONE
             }
             binding.addToShoppingCart.setOnClickListener {
                 binding.viewModel?.addProductToShoppingCart(binding.root.context)

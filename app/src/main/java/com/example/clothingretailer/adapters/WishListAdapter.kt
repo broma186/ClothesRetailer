@@ -37,8 +37,8 @@ class WishListAdapter : ListAdapter<Products, WishListAdapter.ViewHolder>(WishLi
         private val binding: ListItemWishListBinding
     ) : RecyclerView.ViewHolder(binding.root) {
         init {
-            if (binding.productOldPrice.text.equals(ZERO_OLD_PRICE)) {
-                binding.productOldPrice.visibility = View.GONE
+            if (binding.viewModel?.oldPrice == null || binding.viewModel?.oldPrice.toString() == ZERO_OLD_PRICE) {
+                binding.oldPriceLayout.visibility = View.GONE
             }
             binding.removeFromWishList.setOnClickListener {
                 binding.viewModel?.removeProductFromWishList(binding.root.context)

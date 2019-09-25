@@ -35,9 +35,9 @@ class HomeViewPagerFragment : Fragment() {
 
     private fun getTabIcon(position: Int): Int {
         return when (position) {
-            PRODUCTS_INDEX -> R.drawable.garden_tab_selector
-            WISH_LIST_INDEX -> R.drawable.garden_tab_selector
-            SHOPPING_CART_INDEX -> R.drawable.garden_tab_selector
+            PRODUCTS_INDEX -> R.drawable.product_tab_selector
+            WISH_LIST_INDEX -> R.drawable.wish_list_tab_selector
+            SHOPPING_CART_INDEX -> R.drawable.shopping_cart_tab_selector
             else -> throw IndexOutOfBoundsException()
         }
     }

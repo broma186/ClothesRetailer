@@ -14,7 +14,7 @@
     <style name="Theme.ClothingRetailer.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar"/>
 
     <style name="TextAppearance.ClothingRetailer.Toolbar.Text" parent="TextAppearance.MaterialComponents.Headline5" >
-        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
     </style>
 
 </resources>
