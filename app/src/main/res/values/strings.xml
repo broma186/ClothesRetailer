@@ -20,7 +20,7 @@
     <string name="total_price_title">Total Price: </string>
     <string name="product_in_wish_list">Product is already in wish list</string>
     <string name="product_in_shopping_cart">Product is already in shopping cart</string>
-    <string name="stock_title">Quantity: </string>
+    <string name="stock_title">Quantity:  </string>
     <string name="old_price_title">Old Price:  </string>
 
 </resources>
