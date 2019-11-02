@@ -29,9 +29,9 @@ class ProductRepository private constructor(
         // For Singleton instantiation
         @Volatile private var instance: ProductRepository? = null
 
-        fun getInstance(gardenPlantingDao: ProductDao) =
+        fun getInstance(productDao: ProductDao) =
             instance ?: synchronized(this) {
-                instance ?: ProductRepository(gardenPlantingDao).also { instance = it }
+                instance ?: ProductRepository(productDao).also { instance = it }
             }
     }
 
